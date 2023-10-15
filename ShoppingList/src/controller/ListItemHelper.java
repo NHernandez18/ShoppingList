@@ -18,8 +18,7 @@ public class ListItemHelper {
 	public void deleteItem(ListItem toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ListItem>TypedQuery = em.createQuery("select li from ListItem"
-				+ " where li.store = :selectedStore and li.item = :selectedIte", ListItem.class);
+		TypedQuery<ListItem>TypedQuery = em.createQuery("select li from ListItem li where li.store = :selectedStore and li.item = :selectedItem", ListItem.class);
 	
 		//Substitute	parameter	with	actual	data	from	the	toDelete	item
 		TypedQuery.setParameter("selectedStore",	toDelete.getStore());
@@ -55,6 +54,7 @@ public class ListItemHelper {
 		// TODO Auto-generated method stub
 		EntityManager	em	=	emfactory.createEntityManager();
 		em.getTransaction().begin();
+		
 		ListItem	found	=	em.find(ListItem.class,	idToEdit);
 		em.close();
 		return	found;
@@ -64,6 +64,7 @@ public class ListItemHelper {
 		// TODO Auto-generated method stub
 		EntityManager	em	=	emfactory.createEntityManager();
 		em.getTransaction().begin();
+		
 		em.merge(toEdit);
 		em.getTransaction().commit();
 		em.close();

@@ -11,7 +11,7 @@
 			<!-- <property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.cxteoq2crmls.us-east-1.rds.amazonaws.com:3306/shopping"/>
 			<property name="javax.persistence.jdbc.user" value="admin"/>
 			-->
-			<property name="javax.persistence.jdbc.password" value="password"/>
+			<property name="javax.persistence.jdbc.password" value="Dmacc2001?19"/>
 			<property name="eclipselink.ddl-generation" value="create-tables"/>
 		</properties>
 	</persistence-unit>
